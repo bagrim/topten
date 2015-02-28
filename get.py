@@ -21,21 +21,21 @@ def SearchAndPrint(search_terms):
 
 
 
-songname=raw_input("Enter song to download:")
+songname = raw_input("Enter song to download:")
 SearchAndPrint(songname) 
 
-infile=open("songdata.txt","r")
+infile = open("songdata.txt","r")
 while infile:
-	line=infile.readline()
-	if line.find("watch")>=0:
+	line = infile.readline()
+	if line.find("watch") >= 0:
 		n=line.find("watch")
-		code=""
-		count=1;
-		while(line[n]!='&'):
-			if count>=9 :
-				code=code+line[n]
-			n=n+1
-			count=count+1
+		code= ""
+		count = 1;
+		while(line[n]!= '&'):
+			if count >= 9 :
+				code = code + line[n]
+			n = n + 1
+			count = count + 1
 		break
 infile.close()
 os.remove("songdata.txt")
